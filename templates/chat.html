@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurBot - AI Health Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Chat Specific Styles */
+        body {
+            background: linear-gradient(135deg, #1a2a1d, #2d462f);
+            color: #e0e0e0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 2rem auto;
+            width: 95%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h1 {
+            font-size: 1.5rem;
+            color: #4caf50;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chat-window {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Scrollbar Styling */
+        .chat-window::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-window::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-window::-webkit-scrollbar-thumb {
+            background: #4caf50;
+            border-radius: 4px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 15px;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bot-msg {
+            background: rgba(76, 175, 80, 0.2);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .user-msg {
+            background: rgba(255, 255, 255, 0.1);
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-input-area {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #user-input:focus {
+            border-color: #4caf50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+        }
+
+        #send-btn,
+        #mic-btn {
+            background: #4caf50;
+            border: none;
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+        }
+
+        #mic-btn {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #mic-btn.listening {
+            background: #e74c3c;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
+        #send-btn:hover,
+        #mic-btn:hover {
+            transform: scale(1.1);
+            background: #45a049;
+        }
+
+        .loading-dots:after {
+            content: ' .';
+            animation: dots 1s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+
+            0%,
+            20% {
+                content: ' .';
+            }
+
+            40% {
+                content: ' ..';
+            }
+
+            60% {
+                content: ' ...';
+            }
+
+            80%,
+            100% {
+                content: ' ....';
+            }
+        }
+
+        /* Language Toggle Switch */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2px;
+            position: relative;
+        }
+
+        .lang-opt {
+            padding: 5px 15px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .lang-opt.active {
+            color: #1a2a1d;
+            font-weight: 600;
+        }
+
+        .switch-bg {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 50%;
+            height: calc(100% - 4px);
+            background: #4caf50;
+            border-radius: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Nav back button */
+        .back-nav {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .back-nav:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/" class="back-nav"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+    <div class="chat-container glass-panel" style="padding: 0; background: transparent;">
+        <div class="chat-header">
+            <h1><i class="fas fa-robot"></i> AyurBot</h1>
+
+            <div class="lang-switch" onclick="toggleLanguage()">
+                <div class="switch-bg" id="switch-bg"></div>
+                <div class="lang-opt active" id="lang-en">EN</div>
+                <div class="lang-opt" id="lang-hi">HI</div>
+            </div>
+        </div>
+
+        <div class="chat-window" id="chat-window">
+            <div class="message bot-msg">
+                Namaste! I am AyurBot. 🙏 <br>
+                <small style="opacity: 0.8; font-style: italic;">Top Tip: {{ tip }}</small>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <button id="mic-btn"><i class="fas fa-microphone"></i></button>
+            <input type="text" id="user-input" placeholder="Type your symptoms..." onkeypress="handleKeyPress(event)">
+            <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const bg = document.getElementById('switch-bg');
+            const en = document.getElementById('lang-en');
+            const hi = document.getElementById('lang-hi');
+
+            if (currentLang === 'en') {
+                currentLang = 'hi';
+                bg.style.transform = 'translateX(100%)';
+                en.classList.remove('active');
+                hi.classList.add('active');
+                document.getElementById('user-input').placeholder = "अपने लक्षण लिखें...";
+            } else {
+                currentLang = 'en';
+                bg.style.transform = 'translateX(0)';
+                hi.classList.remove('active');
+                en.classList.add('active');
+                document.getElementById('user-input').placeholder = "Type your symptoms...";
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, 'user-msg');
+            input.value = '';
+
+            // Show loading
+            const loadingId = addMessage('Thinking...', 'bot-msg', true);
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message, lang: currentLang })
+                });
+                const data = await response.json();
+
+                // Remove loading and add bot response
+                removeMessage(loadingId);
+                addMessage(data.response, 'bot-msg');
+
+                // Speak response
+                speakResponse(data.response);
+
+            } catch (error) {
+                removeMessage(loadingId);
+                addMessage("Sorry, I am having trouble connecting to Ayurveda wisdom.", 'bot-msg');
+            }
+        }
+
+        function addMessage(text, className, isLoading = false) {
+            const window = document.getElementById('chat-window');
+            const div = document.createElement('div');
+            div.className = `message ${className}`;
+            div.innerHTML = text;
+            if (isLoading) {
+                div.classList.add('loading-dots');
+                div.id = 'loading-' + Date.now();
+            }
+            window.appendChild(div);
+            window.scrollTop = window.scrollHeight;
+            return div.id;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        // Voice Interaction Logic
+        const micBtn = document.getElementById('mic-btn');
+        let recognition;
+
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            // Allow dynamic language switching for recognition
+            // We set it right before starting
+
+            recognition.onstart = function () {
+                micBtn.classList.add('listening');
+            };
+
+            recognition.onend = function () {
+                micBtn.classList.remove('listening');
+            };
+
+            recognition.onresult = function (event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('user-input').value = transcript;
+                sendMessage();
+            };
+
+            micBtn.onclick = function () {
+                recognition.lang = currentLang === 'hi' ? 'hi-IN' : 'en-US';
+                recognition.start();
+            };
+        } else {
+            micBtn.style.display = 'none';
+            console.log("Web Speech API not supported");
+        }
+
+        function speakResponse(text) {
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(text);
+
+                // Set voice/lang based on currentLang
+                // Browsers have different voices, we try to match 'hi-IN' or 'en-US'
+                utterance.lang = currentLang === 'hi' ? 'hi-IN' : 'en-US';
+
+                // Optional: Try to find a specific Hindi voice if available
+                const voices = window.speechSynthesis.getVoices();
+                if (currentLang === 'hi') {
+                    const hindiVoice = voices.find(v => v.lang.includes('hi'));
+                    if (hindiVoice) utterance.voice = hindiVoice;
+                }
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+    </script>
+</body>
+
+</html>

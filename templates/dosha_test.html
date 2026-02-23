@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Dosha Quiz{% endblock %}
+
+{% block content %}
+<div class="container quiz-container glass-panel" style="margin-top: 6rem;">
+    <div id="quiz-header" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Discover Your Dosha</h2>
+        <p style="color: var(--text-muted);">Answer a few questions to reveal your Ayurvedic constitution.</p>
+    </div>
+
+    <form id="quiz-form">
+        {% for q in questions %}
+        <div class="question-card" data-step="{{ loop.index }}">
+            <h3 style="margin-bottom: 1.5rem;">{{ loop.index }}. {{ q.question }}</h3>
+            <div class="options">
+                {% for opt in q.options %}
+                <div class="option-btn" data-value="{{ opt.dosha }}" onclick="selectOption(this, {{ loop.index0 }})">
+                    {{ opt.text }}
+                </div>
+                {% endfor %}
+                <!-- Hidden input to store selection -->
+                <input type="hidden" name="q{{ loop.index }}" id="input-q{{ loop.index }}" required>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <button type="button" class="btn-primary" onclick="submitQuiz()">Analyze My Dosha</button>
+        </div>
+    </form>
+</div>
+
+<!-- Hidden Result Section (populated by JS) -->
+<div id="result-section" class="container glass-panel" style="display: none; margin-top: 2rem; margin-bottom: 4rem;">
+    <div class="dosha-reveal">
+        <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color);">Your Dominant Dosha
+            is</p>
+        <h1 class="dosha-title" id="dosha-name">Loading...</h1>
+        <p id="dosha-desc" style="max-width: 600px; margin: 0 auto; line-height: 1.6;"></p>
+    </div>
+
+    <div style="margin-top: 4rem;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Recommended Herbs & Lifestyle</h2>
+        <div class="herb-grid" id="herb-grid">
+            <!-- Herbs will be inserted here -->
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="/dosha_test" class="btn-primary">Retake Quiz</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function selectOption(element, questionIndex) {
+        // Deselect siblings
+        let siblings = element.parentElement.children;
+        for (let sib of siblings) {
+            if (sib.classList.contains('option-btn')) {
+                sib.classList.remove('selected');
+            }
+        }
+        // Select clicked
+        element.classList.add('selected');
+    }
+
+    async function submitQuiz() {
+        const selectedOptions = document.querySelectorAll('.option-btn.selected');
+        const totalQuestions = {{ questions| length
+    }};
+
+    if (selectedOptions.length < totalQuestions) {
+        alert("Please answer all questions to get an accurate analysis.");
+        return;
+    }
+
+    const answers = Array.from(selectedOptions).map(opt => opt.getAttribute('data-value'));
+
+    showLoader();
+
+    try {
+        const response = await fetch('/analyze', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ answers: answers })
+        });
+
+        const result = await response.json();
+        displayResult(result);
+    } catch (e) {
+        console.error(e);
+        alert("Something went wrong with the spirits!");
+    } finally {
+        hideLoader();
+    }
+        }
+
+    function displayResult(data) {
+        document.querySelector('.quiz-container').style.display = 'none';
+        const resultSection = document.getElementById('result-section');
+        resultSection.style.display = 'block';
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        document.getElementById('dosha-name').innerText = data.dominant_dosha;
+        document.getElementById('dosha-desc').innerText = data.details.description;
+
+        const herbGrid = document.getElementById('herb-grid');
+        herbGrid.innerHTML = ''; // Clear previous
+
+        data.details.herbs.forEach(herb => {
+            const card = document.createElement('div');
+            card.className = 'glass-panel herb-card';
+            card.innerHTML = `
+                    <div class="herb-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>${herb.name}</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">${herb.benefit}</p>
+                `;
+            herbGrid.appendChild(card);
+        });
+    }
+</script>
+{% endblock %}

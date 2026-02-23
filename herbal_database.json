@@ -1,0 +1,929 @@
+{
+    "remedies": {
+        "digestion": [
+            "Triphala",
+            "Ginger",
+            "Ajwain",
+            "Fennel Seeds"
+        ],
+        "gas": [
+            "Ajwain",
+            "Hing (Asafoetida)",
+            "Ginger",
+            "Buttermilk with Cumin",
+            "Black Salt"
+        ],
+        "acid": [
+            "Amla",
+            "Licorice (Mulethi)",
+            "Cold Milk",
+            "Coconut Water"
+        ],
+        "acidity": [
+            "Amla",
+            "Fennel Seeds (Saunf)",
+            "Cold Milk",
+            "Licorice (Mulethi)"
+        ],
+        "constipation": [
+            "Triphala",
+            "Isabgol (Psyllium Husk)",
+            "Castor Oil",
+            "Warm Water with Ghee",
+            "Flaxseeds"
+        ],
+        "bloating": [
+            "Ginger Tea",
+            "Peppermint",
+            "Fennel"
+        ],
+        "indigestion": [
+            "Lemon Water",
+            "Cumin Water",
+            "Ajwain"
+        ],
+        "cold": [
+            "Tulsi",
+            "Ginger",
+            "Black Pepper",
+            "Honey",
+            "Sitopaladi Churna"
+        ],
+        "cough": [
+            "Mulethi",
+            "Ginger",
+            "Honey",
+            "Sitopaladi Churna",
+            "Turmeric Milk"
+        ],
+        "asthma": [
+            "Adulsa (Vasa)",
+            "Tulsi",
+            "Licorice",
+            "Pippali",
+            "Turmeric"
+        ],
+        "jukham": [
+            "Tulsi",
+            "Ginger",
+            "Black Pepper",
+            "Steam Inhalation"
+        ],
+        "sore throat": [
+            "Mulethi",
+            "Ginger Tea",
+            "Honey",
+            "Salt Water Gargle",
+            "Turmeric Milk"
+        ],
+        "sinus": [
+            "Nasya (Ghee in nose)",
+            "Steam with Eucalyptus",
+            "Tulsi",
+            "Ephydra",
+            "Neti Pot"
+        ],
+        "headache": [
+            "Brahmi Oil",
+            "Ginger Tea",
+            "Peppermint Oil",
+            "Paste of Sandalwood"
+        ],
+        "migraine": [
+            "Godanti Bhasma",
+            "Lavender Oil",
+            "Soaked Raisins",
+            "Peppermint Oil",
+            "Brahmi",
+            "Nasya (Ghee in Nose)"
+        ],
+        "stress": [
+            "Ashwagandha",
+            "Brahmi",
+            "Jatamansi",
+            "Meditation"
+        ],
+        "anxiety": [
+            "Brahmi",
+            "Shankhpushpi",
+            "Ashwagandha",
+            "Jatamansi",
+            "Chamomile"
+        ],
+        "sleep": [
+            "Ashwagandha",
+            "Nutmeg (Jaiphal)",
+            "Warm Milk",
+            "Foot Massage"
+        ],
+        "insomnia": [
+            "Ashwagandha",
+            "Brahmi",
+            "Poppy Seeds (Khus Khus)",
+            "Nutmeg with Milk",
+            "Tagara",
+            "Warm Bath"
+        ],
+        "depression": [
+            "Ashwagandha",
+            "Brahmi",
+            "Saffron"
+        ],
+        "pain": [
+            "Turmeric",
+            "Ashwagandha",
+            "Eucalyptus Oil",
+            "Mahanarayan Oil"
+        ],
+        "arthritis": [
+            "Ashwagandha",
+            "Guggul",
+            "Turmeric",
+            "Shallaki",
+            "Ginger",
+            "Nirgundi Oil"
+        ],
+        "joint": [
+            "Mahanarayan Oil",
+            "Turmeric",
+            "Fenugreek"
+        ],
+        "back": [
+            "Ashwagandha",
+            "Eucalyptus Oil",
+            "Kati Vasti"
+        ],
+        "muscle": [
+            "Epsom Salt Bath",
+            "Ashwagandha",
+            "Bala"
+        ],
+        "body pain": [
+            "Turmeric Milk",
+            "Ashwagandha",
+            "Massage with Mahanarayan Oil"
+        ],
+        "skin": [
+            "Neem",
+            "Aloe Vera",
+            "Manjistha",
+            "Turmeric"
+        ],
+        "acne": [
+            "Neem",
+            "Turmeric",
+            "Chandan (Sandalwood)",
+            "Aloe Vera"
+        ],
+        "pimples": [
+            "Neem Paste",
+            "Fuller's Earth (Multani Mitti)"
+        ],
+        "glow": [
+            "Saffron",
+            "Kumkumadi Tailam",
+            "Rose Water"
+        ],
+        "rash": [
+            "Coconut Oil",
+            "Aloe Vera",
+            "Coriander Juice"
+        ],
+        "skin rash": [
+            "Neem",
+            "Aloe Vera Gel",
+            "Turmeric Paste",
+            "Coconut Oil"
+        ],
+        "eczema": [
+            "Neem Oil",
+            "Manjistha",
+            "Aloe Vera"
+        ],
+        "hair": [
+            "Bhringraj",
+            "Amla",
+            "Coconut Oil",
+            "Hibiscus"
+        ],
+        "hair fall": [
+            "Bhringraj Oil",
+            "Amla",
+            "Curry Leaves"
+        ],
+        "dandruff": [
+            "Neem Oil",
+            "Lemon",
+            "Aloe Vera",
+            "Fenugreek Paste",
+            "Curd (Yogurt)"
+        ],
+        "graying": [
+            "Amla",
+            "Bhringraj",
+            "Coconut Oil"
+        ],
+        "immunity": [
+            "Chyawanprash",
+            "Giloy",
+            "Amla",
+            "Tulsi",
+            "Turmeric"
+        ],
+        "weakness": [
+            "Ashwagandha",
+            "Shilajit",
+            "Dates",
+            "Almonds"
+        ],
+        "fever": [
+            "Giloy",
+            "Tulsi",
+            "Neem",
+            "Maha Sudarshan Churna"
+        ],
+        "bukhar": [
+            "Giloy",
+            "Tulsi",
+            "Dry Ginger"
+        ],
+        "fatigue": [
+            "Ashwagandha",
+            "Dates",
+            "Chyawanprash"
+        ],
+        "diabetes": [
+            "Jamun Seeds",
+            "Bitter Gourd (Karela)",
+            "Methi Seeds",
+            "Gurmar"
+        ],
+        "blood pressure": [
+            "Arjuna Bark",
+            "Garlic",
+            "Sarpagandha"
+        ],
+        "cholesterol": [
+            "Guggul",
+            "Garlic",
+            "Arjuna"
+        ],
+        "heart": [
+            "Arjuna",
+            "Garlic",
+            "Flaxseeds"
+        ],
+        "vomiting": [
+            "Ginger",
+            "Lemon Juice",
+            "Cardamom",
+            "Cloves",
+            "Pomegranate Juice"
+        ],
+        "nausea": [
+            "Ginger",
+            "Lemon",
+            "Mint"
+        ],
+        "diarrhea": [
+            "Pomegranate Peel",
+            "Buttermilk",
+            "Nutmeg"
+        ],
+        "cancer": [
+            "Turmeric (Curcumin)",
+            "Ashwagandha (Supportive)",
+            "Tulsi",
+            "PLEASE CONSULT AN ONCOLOGIST"
+        ],
+        "covid": [
+            "Ayush Kwath",
+            "Giloy",
+            "Ashwagandha",
+            "CONSULT DOCTOR"
+        ],
+        "weight loss": [
+            "Triphala",
+            "Honey and Lemon",
+            "Guggul",
+            "Warm Water"
+        ],
+        "weight gain": [
+            "Ashwagandha",
+            "Shatavari",
+            "Dates",
+            "Banana"
+        ],
+        "eyes": [
+            "Triphala Wash",
+            "Rose Water",
+            "Carrots"
+        ],
+        "teeth": [
+            "Neem Twig",
+            "Clove Oil",
+            "Oil Pulling"
+        ],
+        "cooling": [
+            "Sandalwood (Chandan)",
+            "Mint (Pudina)",
+            "Rose Water",
+            "Aloe Vera",
+            "Vetiver (Khus)",
+            "Coconut Water",
+            "Sweet Pomegranate"
+        ],
+        "obesity": [
+            "Honey with Lemon",
+            "Triphala",
+            "Guggul",
+            "Green Tea"
+        ],
+        "thyroid": [
+            "Kanchanar Guggulu",
+            "Coriander Water",
+            "Ashwagandha",
+            "Walnuts"
+        ],
+        "hypertension": [
+            "Arjuna Bark",
+            "Garlic",
+            "Sarpagandha",
+            "Flaxseed Oil"
+        ],
+        "liver": [
+            "Bhumyamalaki",
+            "Kutki",
+            "Turmeric",
+            "Papaya Seeds"
+        ],
+        "kidney": [
+            "Punarnava",
+            "Gokshura",
+            "Varuna",
+            "Cranberry Juice"
+        ],
+        "eye health": [
+            "Triphala Wash",
+            "Ghee",
+            "Carrots",
+            "Amla"
+        ],
+        "piles": [
+            "Haritaki",
+            "Aloe Vera Juice",
+            "Buttermilk",
+            "Psyllium Husk"
+        ],
+        "menstrual pain": [
+            "Shatavari",
+            "Aloe Vera Juice",
+            "Fenugreek",
+            "Cinnamon"
+        ],
+        "anemia": [
+            "Amla",
+            "Spinach",
+            "Beetroot",
+            "Pomegranate"
+        ],
+        "ulcer": [
+            "Licorice",
+            "Aloe Vera",
+            "Cold Milk",
+            "Banana"
+        ],
+        "memory": [
+            "Brahmi",
+            "Shankhpushpi",
+            "Almonds",
+            "Walnuts"
+        ]
+    },
+    "general_advice": {
+        "default": "For general well-being, drink warm water, sleep by 10 PM, and eat fresh, home-cooked meals.",
+        "digestion": "Eat slowly, chew your food 32 times, and avoid cold drinks with meals.",
+        "skin": "Stay hydrated, avoid fried/spicy foods, and wash your face twice daily.",
+        "stress": "Practice Pranayama (breathing exercises) for 10 minutes daily and meditate.",
+        "hair": "Massage your scalp with warm oil twice a week and avoid harsh chemicals.",
+        "sleep": "Avoid screens 1 hour before bed and drink warm turmeric milk.",
+        "pain": "Apply warm oil to the affected area and use hot water fermentation.",
+        "immunity": "Eat fresh fruits, take Vitamin C, and get enough sunlight.",
+        "cooling": "To cool the body, drink coconut water, wear cotton clothes, and avoid spicy/fried foods during the afternoon.",
+        "thyroid": "For thyroid health, include iodine-rich foods, practice Ujjayi Pranayama, and stay active.",
+        "hypertension": "Reduce salt intake, practice slow breathing, and manage stress through meditation.",
+        "liver": "Avoid alcohol and processed foods. Drink warm water with lemon and include bitter herbs in your diet.",
+        "kidney": "Stay hydrated with pure water, avoid excessive protein, and reduce salt intake.",
+        "arthritis": "Massage joints with warm sesame oil and avoid cold, damp environments.",
+        "insomnia": "Follow a regular sleep schedule, avoid caffeine after 2 PM, and massage your feet before bed.",
+        "eye health": "Take breaks from screens, wash eyes with cool water, and include Vitamin A rich foods like carrots.",
+        "piles": "Increase fiber intake, stay hydrated, and avoid sitting for long periods.",
+        "migraine": "Identify triggers, keep a regular routine, and apply sandalwood paste to temples.",
+        "menstrual pain": "Keep the abdominal area warm, drink ginger tea, and practice gentle stretching.",
+        "anemia": "Include iron-rich foods, take Amla for Vitamin C, and avoid tea/coffee with meals.",
+        "asthma": "Avoid dust and allergens, practice deep breathing, and keep the chest warm.",
+        "sinus": "Use a Neti pot regularly, inhale steam with eucalyptus oil, and avoid cold drinks.",
+        "ulcer": "Eat small, frequent meals. Avoid spicy, acidic foods and manage stress.",
+        "memory": "Practice mindfulness, sleep well, and include almonds and Brahmi in your diet."
+    },
+    "tips": [
+        "Did you know? Drinking warm water in the morning kickstarts your metabolism.",
+        "Ayurved tip: Eating dinner before sunset improves digestion and sleep.",
+        "Triphala is known as a 'tridoshic rasayana', balancing all three doshas.",
+        "Massage your feet with warm oil before bed for better sleep.",
+        "Tulsi is considered the 'Queen of Herbs' for its adaptogenic properties.",
+        "Copper water (stored overnight) aids digestion and immunity.",
+        "Oil pulling with sesame oil strengthens teeth and gums.",
+        "Sitting in Vajrasana after meals helps digestion.",
+        "Amla contains 20 times more Vitamin C than an orange.",
+        "Ashwagandha translates to 'Smell of the Horse', implying it gives horse-like strength."
+    ],
+    "remedies_hi": {
+        "digestion": [
+            "त्रिफला (Triphala)",
+            "अदरक (Ginger)",
+            "अजवाइन (Ajwain)",
+            "सौंफ (Fennel)"
+        ],
+        "gas": [
+            "अजवाइन (Ajwain)",
+            "हींग (Hing)",
+            "अदरक (Ginger)",
+            "छाछ (Buttermilk)",
+            "काला नमक"
+        ],
+        "acid": [
+            "आंवला (Amla)",
+            "मुलेठी (Licorice)",
+            "ठंडा दूध (Cold Milk)",
+            "नारियल पानी (Coconut Water)"
+        ],
+        "acidity": [
+            "आंवला",
+            "सौंप",
+            "ठंडा दूध",
+            "मुलेठी"
+        ],
+        "constipation": [
+            "त्रिफला (Triphala)",
+            "इसबगोल (Isabgol)",
+            "अरंडी का तेल (Castor Oil)",
+            "घी और गर्म पानी",
+            "अलसी"
+        ],
+        "bloating": [
+            "अदरक की चाय",
+            "पुदीना",
+            "सौंफ"
+        ],
+        "indigestion": [
+            "नींबू पानी",
+            "जीरा पानी",
+            "अजवाइन"
+        ],
+        "cold": [
+            "तुलसी (Tulsi)",
+            "अदरक (Ginger)",
+            "काली मिर्च (Black Pepper)",
+            "शहद (Honey)"
+        ],
+        "cough": [
+            "मुलेठी (Mulethi)",
+            "अदरक (Ginger)",
+            "शहद (Honey)",
+            "सितोपलादि चूर्ण",
+            "हल्दी दूध"
+        ],
+        "jukham": [
+            "तुलसी (Tulsi)",
+            "अदरक (Ginger)",
+            "काली मिर्च (Black Pepper)",
+            "भाप (Steam)"
+        ],
+        "sore throat": [
+            "मुलेठी (Mulethi)",
+            "अदरक की चाय",
+            "शहद (Honey)",
+            "नमक के पानी के गरारे"
+        ],
+        "headache": [
+            "ब्राह्मी तेल",
+            "अदरक की चाय",
+            "पुदीना तेल",
+            "चंदन का लेप"
+        ],
+        "stress": [
+            "अश्वगंधा (Ashwagandha)",
+            "ब्राह्मी (Brahmi)",
+            "जटामांसी",
+            "ध्यान (Meditation)"
+        ],
+        "anxiety": [
+            "ब्राह्मी",
+            "शंखपुष्पी",
+            "अश्वगंधा",
+            "जटामांसी",
+            "कैमोमाइल"
+        ],
+        "sleep": [
+            "अश्वगंधा",
+            "जायफल",
+            "गर्म दूध",
+            "पैर की मालिश"
+        ],
+        "insomnia": [
+            "अश्वगंधा",
+            "ब्राह्मी",
+            "खस खस",
+            "जायफल और दूध",
+            "तगर",
+            "गर्म स्नान"
+        ],
+        "depression": [
+            "अश्वगंधा",
+            "ब्राह्मी",
+            "केसर"
+        ],
+        "pain": [
+            "हल्दी (Turmeric)",
+            "अश्वगंधा",
+            "यूकेलिप्टस तेल",
+            "महानारायण तेल"
+        ],
+        "arthritis": [
+            "अश्वगंधा",
+            "गुग्गुल",
+            "हल्दी",
+            "शल्लकी",
+            "अदरक",
+            "निर्गुंडी तेल"
+        ],
+        "joint": [
+            "महानारायण तेल",
+            "हल्दी",
+            "मेथी"
+        ],
+        "back": [
+            "अश्वगंधा",
+            "यूकेलिप्टस तेल",
+            "कटी बस्ती"
+        ],
+        "muscle": [
+            "एप्सम सॉल्ट बाथ",
+            "अश्वगंधा",
+            "बाला"
+        ],
+        "body pain": [
+            "हल्दी दूध",
+            "अश्वगंधा",
+            "महानारायण तेल से मालिश"
+        ],
+        "skin": [
+            "नीम (Neem)",
+            "एलोवेरा (Aloe Vera)",
+            "मंजीष्ठा",
+            "हल्दी (Turmeric)"
+        ],
+        "acne": [
+            "नीम",
+            "हल्दी",
+            "चंदन",
+            "एलोवेरा"
+        ],
+        "pimples": [
+            "नीम का लेप",
+            "मुल्तानी मिट्टी"
+        ],
+        "glow": [
+            "केसर (Saffron)",
+            "कुंकुमान्दि तैलम",
+            "गुलाब जल"
+        ],
+        "rash": [
+            "नारियल तेल",
+            "एलोवेरा",
+            "धनिया का रस"
+        ],
+        "skin rash": [
+            "नीम",
+            "एलोवेरा जेल",
+            "हल्दी का पेस्ट",
+            "नारियल का तेल"
+        ],
+        "eczema": [
+            "नीम का तेल",
+            "मंजीष्ठा",
+            "एलोवेरा"
+        ],
+        "hair": [
+            "भृंगराज",
+            "आंवला",
+            "नारियल तेल",
+            "गुडहल"
+        ],
+        "hair fall": [
+            "भृंगराज तेल",
+            "आंवला",
+            "करी पत्ता"
+        ],
+        "dandruff": [
+            "नीम का तेल",
+            "नींबू",
+            "एलोवेरा",
+            "मेथी का लेप",
+            "दही"
+        ],
+        "graying": [
+            "आंवला",
+            "भृंगराज",
+            "नारियल तेल"
+        ],
+        "immunity": [
+            "च्यवनप्राश",
+            "गिलोय",
+            "आंवला",
+            "तुलसी",
+            "हल्दी"
+        ],
+        "weakness": [
+            "अश्वगंधा",
+            "शीलाजीत",
+            "खजूर",
+            "बादाम"
+        ],
+        "fever": [
+            "गिलोय",
+            "तुलसी",
+            "नीम",
+            "महा सुदर्शन चूर्ण"
+        ],
+        "bukhar": [
+            "गिलोय",
+            "तुलसी",
+            "सौंठ"
+        ],
+        "fatigue": [
+            "अश्वगंधा",
+            "खजूर",
+            "च्यवनप्राश"
+        ],
+        "diabetes": [
+            "जामुन के बीज",
+            "करेला",
+            "मेथी दाना",
+            "गुडमार"
+        ],
+        "blood pressure": [
+            "अर्जुन की छाल",
+            "लहसुन",
+            "सर्पगंधा"
+        ],
+        "cholesterol": [
+            "गुग्गुल",
+            "लहसुन",
+            "अर्जुन"
+        ],
+        "heart": [
+            "अर्जुन",
+            "लहसुन",
+            "अलसी के बीज"
+        ],
+        "vomiting": [
+            "अदरक",
+            "नींबू का रस",
+            "इलायची",
+            "लौंग",
+            "अनार का रस"
+        ],
+        "nausea": [
+            "अदरक",
+            "नींबू",
+            "पुदीना"
+        ],
+        "diarrhea": [
+            "अनार का छिलका",
+            "छाछ",
+            "जायफल"
+        ],
+        "cancer": [
+            "हल्दी (Curcumin)",
+            "अश्वगंधा (Supportive)",
+            "तुलसी",
+            "कृपया ऑन्कोलॉजिस्ट (कैंसर विशेषज्ञ) से सलाह लें"
+        ],
+        "covid": [
+            "आयुष काढ़ा",
+            "गिलोय",
+            "अश्वगंधा",
+            "डॉक्टर से सलाह लें"
+        ],
+        "weight loss": [
+            "त्रिफला",
+            "शहद और नींबू",
+            "गुग्गुल",
+            "गर्म पानी"
+        ],
+        "weight gain": [
+            "अश्वगंधा",
+            "शतावरी",
+            "खजूर",
+            "केला"
+        ],
+        "eyes": [
+            "त्रिफला से धोएं",
+            "गुलाब जल",
+            "गाजर"
+        ],
+        "teeth": [
+            "नीम की दातुन",
+            "लौंग का तेल",
+            "ऑयल पुलिंग"
+        ],
+        "cooling": [
+            "चंदन (Sandalwood)",
+            "पुदीना (Pudina)",
+            "गुलाब जल (Rose Water)",
+            "एलोवेरा (Aloe Vera)",
+            "खस (Khus)",
+            "नारियल पानी (Coconut Water)",
+            "मीठा अनार (Sweet Pomegranate)"
+        ],
+        "obesity": [
+            "नींबू और शहद",
+            "त्रिफला",
+            "गुग्गुल",
+            "ग्रीन टी"
+        ],
+        "thyroid": [
+            "कांचनार गुग्गुलु",
+            "धनिया का पानी",
+            "अश्वगंधा",
+            "अखरोट"
+        ],
+        "hypertension": [
+            "अर्जुन की छाल",
+            "लहसुन",
+            "सर्पगंधा",
+            "अलसी का तेल"
+        ],
+        "liver": [
+            "भूम्यामलाकी",
+            "कुटकी",
+            "हल्दी",
+            "पपीता के बीज"
+        ],
+        "kidney": [
+            "पुनर्नवा",
+            "गोक्षुर",
+            "वरुण",
+            "क्रेनबेरी जूस"
+        ],
+        "eye health": [
+            "त्रिफला वॉश",
+            "घी",
+            "गाजर",
+            "आंवला"
+        ],
+        "piles": [
+            "हरीतकी",
+            "एलोवेरा जूस",
+            "छाछ",
+            "इसबगोल"
+        ],
+        "migraine": [
+            "पिपरमिंट ऑयल",
+            "ब्राह्मी",
+            "नस्य (नाक में घी)",
+            "अदरक की चाय"
+        ],
+        "menstrual pain": [
+            "शतावरी",
+            "एलोवेरा जूस",
+            "मेथी",
+            "दालचीनी"
+        ],
+        "anemia": [
+            "आंवला",
+            "पालक",
+            "चुकंदर",
+            "अनार"
+        ],
+        "asthma": [
+            "अडूसा (वासा)",
+            "अदरक",
+            "हल्दी",
+            "तुलसी"
+        ],
+        "sinus": [
+            "तुलसी",
+            "एपेड्रा",
+            "नेति पॉट",
+            "अदरक का काढ़ा"
+        ],
+        "ulcer": [
+            "मुलेठी",
+            "एलोवेरा",
+            "ठंडा दूध",
+            "केला"
+        ],
+        "memory": [
+            "ब्राह्मी",
+            "शंखपुष्पी",
+            "बादाम",
+            "अखरोट"
+        ]
+    },
+    "general_advice_hi": {
+        "default": "सामान्य स्वास्थ्य के लिए, गर्म पानी पिएं, रात 10 बजे तक सो जाएं और ताजा, घर का बना खाना खाएं।",
+        "digestion": "धीरे-धीरे खाएं, भोजन को 32 बार चबाएं और भोजन के साथ ठंडे पेय से बचें।",
+        "skin": "हाइड्रेटेड रहें, तले हुए/मसालेदार भोजन से बचें और दिन में दो बार अपना चेहरा धोएं।",
+        "stress": "रोजाना 10 मिनट प्राणायाम (सांस के व्यायाम) का अभ्यास करें और ध्यान करें।",
+        "hair": "सप्ताह में दो बार गर्म तेल से अपने सिर की मालिश करें और कठोर रसायनों से बचें।",
+        "sleep": "बिस्तर पर जाने से पहले 1 घंटे पहले स्क्रीन से बचें और गर्म हल्दी वाला दूध पिएं।",
+        "pain": "प्रभावित क्षेत्र पर गर्म तेल लगाएं और गर्म पानी से सिकाई करें।",
+        "immunity": "ताजे फल खाएं, विटामिन सी लें और पर्याप्त धूप लें।",
+        "cooling": "शरीर को ठंडा रखने के लिए नारियल पानी पिएं, सूती कपड़े पहनें और दोपहर में मसालेदार/तले हुए खाने से बचें।",
+        "thyroid": "थायरॉइड के स्वास्थ्य के लिए, आयोडीन युक्त खाद्य पदार्थ लें, उज्जायी प्राणायाम का अभ्यास करें और सक्रिय रहें।",
+        "hypertension": "नमक का सेवन कम करें, धीमी सांस लेने का अभ्यास करें और ध्यान के माध्यम से तनाव का प्रबंधन करें।",
+        "liver": "शराब और प्रसंस्कृत खाद्य पदार्थों से बचें। नींबू के साथ गर्म पानी पिएं और अपने आहार में कड़वी जड़ी-बूटियों को शामिल करें।",
+        "kidney": "शुद्ध पानी के साथ हाइड्रेटेड रहें, अत्यधिक प्रोटीन से बचें और नमक का सेवन कम करें।",
+        "arthritis": "जोड़ों की गर्म तिल के तेल से मालिश करें और ठंडे, नम वातावरण से बचें।",
+        "insomnia": "एक नियमित नींद कार्यक्रम का पालन करें, दोपहर 2 बजे के बाद कैफीन से बचें और सोने से पहले अपने पैरों की मालिश करें।",
+        "eye health": "स्क्रीन से ब्रेक लें, ठंडे पानी से आँखें धोएं और गाजर जैसे विटामिन ए युक्त खाद्य पदार्थ शामिल करें।",
+        "piles": "फाइबर का सेवन बढ़ाएं, हाइड्रेटेड रहें और लंबे समय तक बैठने से बचें।",
+        "migraine": "ट्रिगर्स की पहचान करें, नियमित दिनचर्या रखें और मंदिरों (कनपटी) पर चंदन का लेप लगाएं।",
+        "menstrual pain": "पेट के क्षेत्र को गर्म रखें, अदरक की चाय पिएं और हल्के व्यायाम का अभ्यास करें।",
+        "anemia": "आयरन युक्त खाद्य पदार्थ शामिल करें, विटामिन सी के लिए आंवला लें और भोजन के साथ चाय/कॉफी से बचें।",
+        "asthma": "धूल और एलर्जी से बचें, गहरी सांस लेने का अभ्यास करें और छाती को गर्म रखें।",
+        "sinus": "नियमित रूप से नेति पात्र का उपयोग करें, नीलगिरी के तेल के साथ भाप लें और ठंडे पेय से बचें।",
+        "ulcer": "थोड़ा-थोड़ा और बार-बार भोजन करें। मसालेदार, अम्लीय खाद्य पदार्थों से बचें और तनाव का प्रबंधन करें।",
+        "memory": "माइंडफुलनेस का अभ्यास करें, अच्छी नींद लें और अपने आहार में बादाम और ब्राह्मी शामिल करें।"
+    },
+    "tips_hi": [
+        "क्या आप जानते हैं? सुबह गर्म पानी पीने से अपका मेटाबॉलिज्म (चयापचय) शुरू हो जाता है।",
+        "आयुर्वेद टिप: सूर्यास्त से पहले रात का खाना खाने से पाचन और नींद में सुधार होता है।",
+        "त्रिफला को 'त्रिदोषिक रसायन' के रूप में जाना जाता है, जो तीनों दोषों को संतुलित करता है।",
+        "बेहतर नींद के लिए बिस्तर पर जाने से पहले गर्म तेल से अपने पैरों की मालिश करें।",
+        "तुलसी को इसके एडाप्टोजेनिक गुणों के लिए 'जड़ी बूटियों की रानी' माना जाता है।",
+        "तांबे के बर्तन का पानी (रात भर रखा हुआ) पाचन और प्रतिरक्षा में सहायता करता है।",
+        "तिल के तेल से कुल्ला करने से दांत और मसूड़े मजबूत होते हैं।",
+        "भोजन के बाद वज्रासन में बैठने से पाचन में मदद मिलती है।",
+        "आंवला में संतरे की तुलना में 20 गुना अधिक विटामिन सी होता है।",
+        "अश्वगंधा का अर्थ है 'घोड़े की गंध', जिसका अर्थ है कि यह घोड़े जैसी ताकत देता है।"
+    ],
+    "symptom_map_hi": {
+        "सिर दर्द": "headache",
+        "सिरदर्द": "headache",
+        "माथा दर्द": "headache",
+        "पेट दर्द": "digestion",
+        "गैस": "gas",
+        "कब्ज": "constipation",
+        "एसिडिटी": "acidity",
+        "जलन": "acidity",
+        "जुकाम": "jukham",
+        "सर्दी": "cold",
+        "खांसी": "cough",
+        "बुखार": "bukhar",
+        "ताप": "fever",
+        "त्वचा": "skin",
+        "मुंहासे": "acne",
+        "पिंपल्स": "pimples",
+        "खुजली": "rash",
+        "बाल": "hair",
+        "बाल झड़ना": "hair fall",
+        "डैंड्रफ": "dandruff",
+        "रूसी": "dandruff",
+        "तनाव": "stress",
+        "चिंता": "anxiety",
+        "नींद": "sleep",
+        "अनिद्रा": "insomnia",
+        "दर्द": "pain",
+        "जोड़ों का दर्द": "joint",
+        "पीठ दर्द": "back",
+        "शरीर दर्द": "body pain",
+        "कैंसर": "cancer",
+        "उल्टी": "vomiting",
+        "दस्त": "diarrhea",
+        "कमजोरी": "weakness",
+        "ताकत": "immunity",
+        "थकान": "fatigue",
+        "शुगर": "diabetes",
+        "मधुमेह": "diabetes",
+        "बीपी": "blood pressure",
+        "रक्तचाप": "hypertension",
+        "हृदय": "heart",
+        "वजन कम": "weight loss",
+        "मोटापा": "obesity",
+        "वजन बढ़ाना": "weight gain",
+        "गर्मी": "cooling",
+        "ठंडा": "cooling",
+        "शीतल": "cooling",
+        "ठंडक": "cooling",
+        "लू": "cooling",
+        "थायरॉइड": "thyroid",
+        "लिवर": "liver",
+        "किडनी": "kidney",
+        "पथरी": "kidney",
+        "गठिया": "arthritis"
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurAI - Future of Wellness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="container"
+        style="display: flex; justify-content: space-between; align-items: center; padding-top: 2rem;">
+        <div class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--accent-color);">AyurAI</div>
+        <div class="nav-links">
+            <a href="/" style="margin-left: 2rem;">Home</a>
+            <a href="/dosha_test" style="margin-left: 2rem;">Dosha Quiz</a>
+        </div>
+    </nav>
+
+    <header class="hero container">
+        <h1 class="fade-in">NUREL AGENT.<br>Modern Intelligence.</h1>
+        <p class="fade-in">Discover your unique body constitution (Dosha) and get personalized herbal remedies powered
+            by AI.</p>
+        <div style="margin-top: 2rem;">
+            <a href="/dosha_test" class="btn-primary fade-in">Start Analysis <i class="fas fa-arrow-right"></i></a>
+            <a href="/chat" class="btn-primary fade-in"
+                style="background: linear-gradient(45deg, #FF6B6B, #EE5D5D); margin: 0 1rem;">Chat AI <i
+                    class="fas fa-comment-medical"></i></a>
+            <a href="/simulation" class="btn-primary fade-in"
+                style="background: transparent; border: 1px solid var(--accent-color);">Simulation <i
+                    class="fas fa-vr-cardboard"></i></a>
+        </div>
+
+        <div class="glass-panel" style="margin-top: 4rem; max-width: 800px; width: 100%;">
+            <div style="display: flex; justify-content: space-around; text-align: center;">
+                <div>
+                    <i class="fas fa-leaf"
+                        style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                    <h3>Natural</h3>
+                </div>
+                <div>
+                    <i class="fas fa-brain"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;"></i>
+                    <h3>AI Powered</h3>
+                </div>
+                <div>
+                    <i class="fas fa-heart"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <h3>Personalized</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <footer class="container">
+        <p>&copy; 2026 AyurAI. Harmonizing technology with nature.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

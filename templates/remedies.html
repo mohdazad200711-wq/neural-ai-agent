@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Find Remedy{% endblock %}
+
+{% block content %}
+<style>
+    .search-box {
+        width: 100%;
+        max-width: 600px;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 1.2rem;
+        outline: none;
+        transition: all 0.3s;
+        margin-bottom: 2rem;
+    }
+
+    .search-box:focus {
+        border-color: var(--accent-color);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 20px rgba(0, 255, 127, 0.2);
+    }
+</style>
+
+<div class="container" style="text-align: center; margin-top: 6rem;">
+    <h1 class="fade-in">Find Your Remedy</h1>
+    <p class="fade-in" style="margin-bottom: 3rem; color: var(--text-muted);">Describe your symptom (e.g., "stress",
+        "digestion", "cold")</p>
+
+    <div id="verificationBadge" class="glass-panel"
+        style="display: none; display: inline-block; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.8rem; margin-bottom: 2rem;">
+        <i class="fas fa-certificate" style="color: var(--secondary-color);"></i> <span id="verificationStatus">Not
+            Verified</span>
+    </div>
+    <div id="remedy-count" class="fade-in"
+        style="margin-bottom: 2rem; color: var(--accent-color); font-size: 0.9rem; font-weight: bold; background: rgba(0, 255, 127, 0.05); padding: 0.5rem 1rem; border-radius: 10px; display: inline-block;">
+        <i class="fas fa-database"></i> <span id="count-value">Loading knowledge base...</span>
+    </div>
+    <br>
+
+    <input type="text" id="symptomInput" class="search-box fade-in" placeholder="Type a symptom..."
+        onkeypress="handleEnter(event)">
+    <br>
+    <button class="btn-primary fade-in" onclick="searchRemedy()">Search AI Database</button>
+
+    <div id="verificationWarning" class="glass-panel fade-in"
+        style="display: none; margin: 2rem auto; max-width: 600px; border-color: #ff6b6b; background: rgba(255, 107, 107, 0.05);">
+        <h3 style="color: #ff6b6b;"><i class="fas fa-exclamation-triangle"></i> Verification Required</h3>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Recommendations for sensitive conditions require
+            <strong>Legal Proof Verification</strong>. Please <a href="/register"
+                style="color: var(--accent-color); font-weight: 700;">verify your account</a> to see full medicine
+            recommendations.
+        </p>
+    </div>
+
+    <div id="results-area" class="herb-grid fade-in" style="margin-top: 4rem;">
+        <!-- Results go here -->
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Function to fetch and display the remedy count
+    async function fetchRemedyCount() {
+        try {
+            const response = await fetch('/get_remedy_count'); // Assuming an endpoint to get the count
+            const data = await response.json();
+            if (data && data.count !== undefined) {
+                document.getElementById('count-value').innerText = `${data.count} remedies in database`;
+            } else {
+                document.getElementById('count-value').innerText = 'Count unavailable';
+            }
+        } catch (error) {
+            console.error('Error fetching remedy count:', error);
+            document.getElementById('count-value').innerText = 'Error loading count';
+        }
+    }
+
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', fetchRemedyCount);
+
+    function handleEnter(e) {
+        if (e.key === 'Enter') searchRemedy();
+    }
+
+    async function searchRemedy() {
+        const symptom = document.getElementById('symptomInput').value;
+        if (!symptom) return;
+
+        const grid = document.getElementById('results-area');
+        grid.innerHTML = '';
+        showLoader();
+
+        try {
+            const response = await fetch('/get_remedy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ symptom: symptom })
+            });
+
+            const data = await response.json();
+
+            // Update verification badge
+            const badge = document.getElementById('verificationBadge');
+            const statusText = document.getElementById('verificationStatus');
+            const warning = document.getElementById('verificationWarning');
+
+            badge.style.display = 'inline-block';
+            statusText.innerText = data.verified ? "Verified User" : "Unverified User";
+            statusText.style.color = data.verified ? "var(--accent-color)" : "var(--secondary-color)";
+            warning.style.display = 'none';
+
+            if (data.recommendations && data.recommendations.length > 0) {
+                if (data.recommendations[0] === "VERIFICATION_REQUIRED") {
+                    warning.style.display = 'block';
+                    return;
+                }
+                data.recommendations.forEach(herb => {
+                    const isVerifiedAdvantage = herb.includes('(Verified Advantage)');
+                    const herbName = herb.replace('(Verified Advantage)', '').trim();
+
+                    const card = document.createElement('div');
+                    card.className = 'glass-panel herb-card';
+                    if (isVerifiedAdvantage) {
+                        card.style.border = '1px solid var(--accent-color)';
+                        card.style.background = 'rgba(0, 255, 127, 0.05)';
+                    }
+
+                    card.innerHTML = `
+                            <div class="herb-icon"><i class="fas ${isVerifiedAdvantage ? 'fa-award' : 'fa-mortar-pestle'}" style="${isVerifiedAdvantage ? 'color: var(--accent-color)' : ''}"></i></div>
+                            <h3>${herbName} ${isVerifiedAdvantage ? '<span style="font-size: 0.6rem; background: var(--accent-color); color: var(--bg-dark); padding: 2px 6px; border-radius: 10px; vertical-align: middle; margin-left: 5px;">ADVANTAGE</span>' : ''}</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Recommended for ${symptom}</p>
+                        `;
+                    grid.appendChild(card);
+                });
+            } else {
+                grid.innerHTML = '<p>No specific Ayurvedic remedy found for this keyword. Try synonyms like "pain", "stress", or "digestion".</p>';
+            }
+        } catch (e) {
+            console.error(e);
+            grid.innerHTML = '<p>Error connecting to the knowledge base.</p>';
+        } finally {
+            hideLoader();
+        }
+    }
+</script>
+{% endblock %}
